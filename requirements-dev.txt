@@ -1,5 +1,6 @@
 # Development requirements (includes ML libraries for local training)
 # Install with: pip install -r requirements-dev.txt
+setuptools==65.5.0
 Flask==2.2.0
 python-dotenv==1.0.0
 pandas==1.3.5

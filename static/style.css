@@ -1,0 +1,131 @@
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --primary: #0d6efd;
+    --secondary: #212529;
+    --surface: #eef2ff;
+    --gradient: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(124,58,237,0.08));
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.dark-mode {
+    --bg: #12131a;
+    --card: #1f2430;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --surface: #191f2d;
+    --gradient: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(124,58,237,0.16));
+}
+
+body.dark-mode .navbar, body.dark-mode .card {
+    background: #171b26 !important;
+}
+
+body.dark-mode a, body.dark-mode .text-muted, body.dark-mode .form-control,
+body.dark-mode .form-select {
+    color: var(--text) !important;
+}
+
+.navbar {
+    z-index: 1000;
+}
+
+.hero-section {
+    background: var(--gradient);
+    border-radius: 28px;
+}
+
+.hero-image {
+    max-width: 320px;
+}
+
+.card {
+    background: var(--card);
+    border: none;
+    border-radius: 20px;
+}
+
+.dashboard-card {
+    border-left: 6px solid var(--primary);
+}
+
+.card h3 {
+    font-size: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-light {
+    color: #fff;
+    border-color: rgba(255,255,255,0.8);
+}
+
+.table thead th {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.table tbody tr:hover {
+    background: rgba(13,110,253,0.05);
+}
+
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.45);
+    z-index: 2000;
+}
+
+.loader-overlay.active {
+    display: flex;
+}
+
+.loader-spinner {
+    width: 72px;
+    height: 72px;
+    border: 8px solid rgba(255, 255, 255, 0.18);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.form-control,
+.form-select {
+    background: var(--surface);
+    border: 1px solid rgba(15,23,42,0.12);
+    color: var(--text);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--muted);
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--muted);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+}

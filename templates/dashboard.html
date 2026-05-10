@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Total Transactions</h6>
+                    <h3 id="total-transactions">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Fraud Detected</h6>
+                    <h3 id="fraud-count">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Safe Transactions</h6>
+                    <h3 id="safe-count">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Avg. Fraud Probability</h6>
+                    <h3 id="average-probability">0%</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Fraud vs Safe Ratio</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="fraudChart" height="260"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Recent Predictions</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group" id="recent-predictions"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3">
+            <div>
+                <h5 class="card-title mb-0">Transaction History</h5>
+                <p class="text-muted mb-0">Search, filter, and review recent activity.</p>
+            </div>
+            <div class="d-flex gap-2">
+                <input id="search-input" type="search" class="form-control form-control-sm" placeholder="Search transactions">
+                <select id="filter-status" class="form-select form-select-sm">
+                    <option value="">All</option>
+                    <option value="safe">Safe</option>
+                    <option value="fraud">Fraud</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Prediction</th>
+                        <th>Probability</th>
+                        <th>Email</th>
+                        <th>Source</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

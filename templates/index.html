@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Credit Card Fraud Detection{% endblock %}
+
+{% block content %}
+<section class="hero-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold">Credit Card Fraud Detection</h1>
+                <p class="lead text-muted">Build a secure transaction monitoring system powered by machine learning, MongoDB, and Flask.</p>
+                <div class="mt-4">
+                    <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg me-2">Login</a>
+                    <a href="{{ url_for('register') }}" class="btn btn-outline-light btn-lg">Register</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="hero-image" alt="Fraud detection illustration">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-4">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm bg-gradient">
+                <div class="card-body">
+                    <h5 class="card-title">Real-Time Fraud Detection</h5>
+                    <p class="card-text">Login and submit transaction records to see fraud probability instantly with Random Forest.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm bg-gradient">
+                <div class="card-body">
+                    <h5 class="card-title">Admin Dashboard</h5>
+                    <p class="card-text">Track fraud and safe transaction analytics, search history, and manage users.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

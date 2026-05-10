@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Total Users</h6>
+                    <h3 id="user-count">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Total Transactions</h6>
+                    <h3 id="total-transactions">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Fraud Count</h6>
+                    <h3 id="fraud-count">0</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card dashboard-card shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-uppercase text-muted">Safe Count</h6>
+                    <h3 id="safe-count">0</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Fraud vs Safe Overview</h5>
+                    <canvas id="fraudChart" height="260"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Recent Users</h5>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Joined</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
